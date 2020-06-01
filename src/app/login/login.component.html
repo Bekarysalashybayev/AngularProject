@@ -1,0 +1,31 @@
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm-12">
+    <h3>Login</h3>
+    <hr>
+    <h3 *ngIf="error">{{error}}</h3>
+    <div [hidden]="submitted" style="width: 400px;">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" required [(ngModel)]="userName" name="name">
+        </div>
+
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password" class="form-control" id="Password" required [(ngModel)]="password" name="Password">
+        </div>
+
+        <button type="submit" class="btn btn-success">Login</button>
+        <button (click)="redir()" class="btn btn-success" style="margin-left: 5px;">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<br>
+
+
+

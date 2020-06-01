@@ -1,0 +1,30 @@
+<br>
+<br>
+<h3>Create Payment</h3>
+<div class="col-md-4" ></div>
+<div class="col-md-6">
+  <div [hidden]="submitted" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+      <label for="style">CardNumber</label>
+      <input type="text" class="form-control" id="style" required [(ngModel)]="pay.cardNumber" name="style">
+    </div>
+      <div class="form-group">
+        <label for="style1">Cvv</label>
+        <input type="text" class="form-control" id="style1" required [(ngModel)]="pay.cvv" name="style">
+      </div>
+      <div class="form-group">
+        <label for="price" style="color: #0B2349">Price</label>
+        <h5 type="text" class="form-control" id="price" name="price">5000</h5>
+      </div>
+
+      <button type="submit" class="btn btn-success">Pay</button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h4>You payment Created successfully!</h4>
+  </div>
+
+</div>
+{{count}}

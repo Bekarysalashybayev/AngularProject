@@ -1,0 +1,52 @@
+<br>
+<br>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-sm-2">
+        <h2>Honey</h2>
+      </div>
+<!--      <div class="col-sm-2">-->
+<!--        <h3><a href="/add" class="btn btn-primary active" role="button" routerLinkActive="active">Add new Game</a></h3>-->
+<!--      </div>-->
+      <div class="col-sm-2">
+        <h3><a href="/history" class="btn btn-primary active" role="button" routerLinkActive="active">History</a></h3>
+      </div>
+      <div class="col-sm-6">
+<!--       <div class="row">-->
+<!--         <div class="col-sm-2"><button (click)="sendToKafka()" class="btn btn-primary active">Kafka</button></div>-->
+<!--         <div class="col-sm-3">Name :{{game.name}}</div>-->
+<!--         <div class="col-sm-4">Category :{{game.category}}</div>-->
+<!--         <div class="col-sm-3"></div>-->
+<!--       </div>-->
+      </div>
+    </div>
+    <br>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>img</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let game of games | async">
+        <td>{{game.id}}</td>
+        <td>{{game.name}}</td>
+        <td>{{game.category}}</td>
+        <td>{{game.description.slice(0,30)}}</td>
+        <td>{{game.img.slice(12)}}</td>
+        <td><button (click)="deleteGame(game.id)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

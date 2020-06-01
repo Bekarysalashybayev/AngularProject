@@ -1,0 +1,56 @@
+
+<br>
+<form action="">
+  <div class="form-group">
+    <input type="text" class="form-control" id="img" required [(ngModel)]="name" (ngModelChange)="modelChanged()" name="img" placeholder="search by name">
+  </div>
+</form>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="card" *ngFor="let game of games | async">
+    <img src="./assets/image/{{game.img.slice(12)}}" alt="Denim Jeans" style="width:100%">
+    <h3>{{game.name}}</h3>
+    <p class="price">5000tng</p>
+    <p>{{game.description.slice(0, 25)}} ... </p>
+    <p><button (click)="send(game.id)">View Detail</button></p>
+  </div>
+</div>
+
+
+<!--<div class="panel panel-default">-->
+<!--  <div class="panel-heading">-->
+<!--    <h1>Games</h1>-->
+<!--  </div>-->
+<!--  <div class="panel-body">-->
+<!--    <table class="table table-striped table-bordered">-->
+<!--      <thead>-->
+<!--      <tr>-->
+<!--        <th>ID</th>-->
+<!--        <th>Name</th>-->
+<!--        <th>Category</th>-->
+<!--        <th>Description</th>-->
+<!--        <th>img</th>-->
+<!--        <th>Actions</th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+<!--      <tbody>-->
+<!--      <tr *ngFor="let game of games | async">-->
+<!--        <td>{{game.id}}</td>-->
+<!--        <td>{{game.name}}</td>-->
+<!--        <td>{{game.category}}</td>-->
+<!--        <td>{{game.description.slice(0,30)}}</td>-->
+<!--        <td>{{game.img.slice(12)}}</td>-->
+<!--        <td><button (click)="deleteGame(game.id)">Delete</button>-->
+<!--          <button>Rent</button>-->
+<!--          <button (click)="send(game.id)">Catalog</button>-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--      </tbody>-->
+<!--    </table>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<img src="./assets/image/game3.jpg"/>-->
+

@@ -1,0 +1,73 @@
+<br>
+<br>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-sm-2">
+        <h2>History</h2>
+      </div>
+      <div class="col-sm-2">
+        <h3><a href="/add" class="btn btn-primary active" role="button" routerLinkActive="active">Add new Game</a></h3>
+      </div>
+      <div class="col-sm-2">
+        <h3><a href="/history" class="btn btn-primary active" role="button" routerLinkActive="active">History Actions</a></h3>
+      </div>
+    </div>
+    <br>
+  </div>
+  <div class="panel-body">
+    <br>
+    Rents
+    <hr>
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>Rent ID</th>
+        <th>Game Name</th>
+        <th>From Date</th>
+        <th>To Date</th>
+        <th>Price</th>
+        <th>User</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let rent of rent | async">
+        <td>{{rent.id}}</td>
+        <td>{{getName(rent.gameID)}}</td>
+        <td>{{rent.fromDate}}</td>
+        <td>{{rent.toDate}}</td>
+        <td>{{rent.price}}</td>
+        <td>{{rent.userID}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+<div class="panel-body">
+  <br>
+  Payments
+  <hr>
+  <table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Rent Id</th>
+      <th>Price</th>
+      <th>Card Number</th>
+      <th>CVV</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of pay | async">
+      <td>{{p.id}}</td>
+      <td>{{p.rentID}}</td>
+      <td>{{p.price}}</td>
+      <td>{{p.cardNumber}}</td>
+      <td>{{p.cvv}}</td>
+      <td>{{p.date}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

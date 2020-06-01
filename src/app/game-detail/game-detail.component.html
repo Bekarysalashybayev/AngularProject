@@ -1,0 +1,121 @@
+
+<br>
+<br>
+<div class="container">
+  <div class="roww">
+    <div class="game">
+      <div *ngIf="game">
+        <img src="./assets/image/{{game.img.slice(12)}}" alt="">
+        <br>
+        <br>
+        <h3>Game-Name : {{game.name}}</h3>
+        <div class="desc">
+          <h4>Description :</h4> <p > {{game.description}}</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="form">
+      <h3>Create Order</h3>
+      <div [hidden]="submitted" style="width: 400px;">
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="fromDate">fromDate</label>
+            <input type="text" class="form-control" id="fromDate" required [(ngModel)]="rent.fromDate" name="fromDate">
+          </div>
+
+          <div class="form-group">
+            <label for="toDate">toDate</label>
+            <input type="text" class="form-control" id="toDate" required [(ngModel)]="rent.toDate" name="toDate">
+          </div>
+
+          <div class="form-group">
+            <label for="price">price</label>
+            <h5 type="text" class="form-control" id="price" name="price">5000</h5>
+          </div>
+
+          <button type="submit" class="btn btn-success">Buy this Game</button>
+        </form>
+      </div>
+
+      <div [hidden]="!submitted">
+      </div>
+    </div>
+    <br>
+
+  </div>
+</div>
+
+<br>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container" style="margin-left: 15px; border:grey 1px solid; padding: 10px;width: 1115px">
+  <h2>Send Comment</h2>
+  <hr>
+  <div class="row">
+    <div [hidden]="submitted1" style="width: 400px;">
+
+      <form (ngSubmit)="onSubmit1()" style="margin-left: 20px;">
+        <div class="form-group">
+          <textarea class="form-control" placeholder="Enter your comment here..." id="name" required [(ngModel)]="feed.text" name="name"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Comment</button>
+      </form>
+    </div>
+
+    <div [hidden]="!submitted1">
+      <h4>You submitted successfully!</h4>
+    </div>
+  </div>
+</div>
+<br>
+
+<div *ngIf="feeds" class="container" style="margin-left: 20px;">
+  <div class="row">
+    <div class="panel panel-default widget">
+      <div class="panel-heading">
+        <span class="glyphicon glyphicon-comment"></span>
+        <h3 class="panel-title" style="color: #0B2349">
+          Recent Comments</h3>
+        <span class="label label-info">
+                    {{count}}</span>
+      </div>
+      <div class="panel-body">
+        <ul  class="list-group">
+          <li *ngFor="let feed of feeds | async" class="list-group-item">
+            <div class="row">
+              <div class="col-xs-2 col-md-1">
+                <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
+              <div class="col-xs-10 col-md-11">
+                <div>
+                  <a href="#">{{feed.date}}</a>
+                  <div class="mic-info" style="width: 960px">
+                    By: <a href="#" style="font-size: medium">{{feed.userId}}</a>
+                  </div>
+                </div>
+                <div class="comment-text">
+                  <p style="font-size: 20px;">{{feed.text}}</p>
+                </div>
+<!--                <div class="action">-->
+<!--                  <button type="button" class="btn btn-primary btn-xs" title="Edit">-->
+<!--                    <span class="glyphicon glyphicon-pencil"></span>-->
+<!--                  </button>-->
+<!--                  <button type="button" class="btn btn-success btn-xs" title="Approved">-->
+<!--                    <span class="glyphicon glyphicon-ok"></span>-->
+<!--                  </button>-->
+<!--                  <button type="button" class="btn btn-danger btn-xs" title="Delete">-->
+<!--                    <span class="glyphicon glyphicon-trash"></span>-->
+<!--                  </button>-->
+<!--                </div>-->
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

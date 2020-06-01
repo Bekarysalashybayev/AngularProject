@@ -1,0 +1,60 @@
+.container{}
+.roww {
+  display: flex;
+  justify-content: space-between;
+  background-image: url("../../assets/image/1108542.jpg");
+  background-color: #cccccc; /* Used if the image is unavailable */
+  /*height: 500px; !* You must set a specified height *!*/
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  padding: 30px 30px 30px 30px;
+  height: auto;
+}
+
+.game{
+  width: 500px;
+}
+.game p{
+  font-family: 'Rubik One', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, greenyellow 33%, lightgrey 36%, darkgreen);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0B2349;
+  display: table;
+}
+.desc{
+  background-color: aliceblue;
+  padding: 5px 5px 5px 5px;
+}
+.desc p{
+  font-family: 'Rubik One', sans-serif;
+  font-size: 20px;
+  text-transform: lowercase;
+  background: linear-gradient(45deg, black 33%, darkblue 36%, darkgreen);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0B2349;
+  display: table;
+}
+.game img{
+  border: white 3px solid;
+}
+.form label,h3{
+  color: white;
+  font-size: larger;
+}
+
+body { padding-top:30px; }
+.widget .panel-body { padding:0px; }
+.widget .list-group { margin-bottom: 0; }
+.widget .panel-title { display:inline }
+.widget .label-info { float: right; }
+.widget li.list-group-item {border-radius: 0;border: 0;border-top: 1px solid #ddd;}
+.widget li.list-group-item:hover { background-color: rgba(86,61,124,.1); }
+.widget .mic-info { color: #666666;font-size: 11px; }
+.widget .action { margin-top:5px; }
+.widget .comment-text { font-size: 12px; }
+.widget .btn-block { border-top-left-radius:0px;border-top-right-radius:0px; }
